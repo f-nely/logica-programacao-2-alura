@@ -17,7 +17,7 @@
         pincel.fillRect(0, 0, 600, 400);
 
         let desenha = false;
-        function desenhaCirculo(evento) {
+        tela.onmousemove = function (evento) {
             let x = evento.pageX - tela.offsetLeft;
             let y = evento.pageY - tela.offsetTop;
 
@@ -30,18 +30,13 @@
             console.log(`${x} , ${y}`);
         }
 
-        tela.onmousemove = desenhaCirculo;
-        
-        function habilitaDesenhar() {
+        tela.onmousedown = function () {
             desenha = true;
         }
 
-        function desabilitaDesenhar() {
+        tela.onmouseup = function () {
             desenha = false;
         }
-
-        tela.onmousedown = habilitaDesenhar;
-        tela.onmouseup = desabilitaDesenhar;
     </script>
 </body>
 </html>
